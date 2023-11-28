@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB connection setup
-require("./helpers/db");
+require("./config/database");
 
 app.use(require("./routes/mainRoute"));
 

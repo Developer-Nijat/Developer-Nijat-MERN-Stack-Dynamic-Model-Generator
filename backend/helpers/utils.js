@@ -11,9 +11,17 @@ function generateFields(fields) {
 
     // Append the field definition to the string
     if (field.type === "ObjectId") {
-      fieldDefinitions += `"${field.name}": { type: Schema.Types.${field.type}, ref: "${field.ref}" }${separator}`;
+      fieldDefinitions += `"${field.name}": { type: Schema.Types.${
+        field.type
+      }, ref: "${field.ref}" ${field?.required ? `, required: true` : ""} ${
+        field?.unique ? `, unique: true` : ""
+      } }${separator}`;
     } else {
-      fieldDefinitions += `"${field.name}": { type: Schema.Types.${field.type} }${separator}`;
+      fieldDefinitions += `"${field.name}": { type: Schema.Types.${
+        field.type
+      } ${field?.required ? `, required: true` : ""} ${
+        field?.unique ? `, unique: true` : ""
+      } }${separator}`;
     }
   });
 

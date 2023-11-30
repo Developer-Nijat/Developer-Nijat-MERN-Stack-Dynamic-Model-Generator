@@ -1,0 +1,35 @@
+{
+  "dbConfig": {
+    "host": "your_mongodb_url"
+  },
+  "PORT": 4000,
+  "mailConfigs": {
+    "incoming": [
+      {
+        "user": "",
+        "password": "",
+        "host": "smtp.office365.com",
+        "port": 993,
+        "service": "smtp.office365.com",
+        "name": ""
+      }
+    ],
+    "outgoing": [
+      {
+        "user": "",
+        "password": "",
+        "host": "smtp.office365.com",
+        "port": 993,
+        "service": "smtp.office365.com",
+        "name": ""
+      }
+    ]
+  },
+  "auth": {
+    "privatekey": "jwt_private_key"
+  },
+  "urls": {},
+  "cronJobs": {
+    "deleteUserActivityLogCronTimer": "*/1 * * * *"
+  }
+}

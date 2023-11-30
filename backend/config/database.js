@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
+const config = require("config");
 
-const connectionString = "your-mongodb-url-here";
+const connectionString = config.get("dbConfig.host");
 mongoose
-  .connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(connectionString)
   .then(() => {
     console.log("Connected to MongoDB");
   })
